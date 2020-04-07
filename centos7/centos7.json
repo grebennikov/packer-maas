@@ -37,6 +37,8 @@
                 "done",
                 "echo 'Tarring up image...'",
                 "mount /dev/nbd4p1 $TMP_DIR",
+                "echo 'Adding Curtin hooks....'",
+                "cp -r curtin $TMP_DIR",
                 "tar -Sczpf centos7.tar.gz --selinux -C $TMP_DIR .",
                 "echo 'Unmounting image...'",
                 "umount $TMP_DIR",
